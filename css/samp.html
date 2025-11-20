@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Azure Depths Example</title>
+  <!-- Tailwind CDN for the utility classes (min-h-screen, w-full, relative, absolute, inset-0, z-0, etc.) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Optional: ensure body has no default margin so min-h-screen behaves as expected */
+    body, html { height: 100%; margin: 0; }
+
+    /* Grid layout for languages */
+.languages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+/* Each language box */
+.language-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transform: rotateX(90deg);
+  opacity: 0;
+  animation: flip-in 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+}
+
+/* Delay each item slightly for a cascade effect */
+.language-item:nth-child(1) { animation-delay: 0.1s; }
+.language-item:nth-child(2) { animation-delay: 0.2s; }
+.language-item:nth-child(3) { animation-delay: 0.3s; }
+.language-item:nth-child(4) { animation-delay: 0.4s; }
+.language-item:nth-child(5) { animation-delay: 0.5s; }
+.language-item:nth-child(6) { animation-delay: 0.6s; }
+.language-item:nth-child(7) { animation-delay: 0.7s; }
+.language-item:nth-child(8) { animation-delay: 0.8s; }
+.language-item:nth-child(9) { animation-delay: 0.9s; }
+
+/* Flip-in animation */
+@keyframes flip-in {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+/* Optional hover effect */
+.language-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  transition: transform 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+  </style>
+</head>
+<body>
+  <div class="min-h-screen w-full relative">
+    <!-- Azure Depths -->
+    <div
+      class="absolute inset-0 z-0"
+      style="background: radial-gradient(125% 125% at 50% 100%, #000000 40%, #350136 100%);"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Your Content/Components (place content above the background by giving it a higher z-index) -->
+    <main class="relative z-10 flex items-center justify-center min-h-screen">
+      <div class="max-w-xl text-center p-6">
+        <!-- Languages Section -->
+<div class="card shadow mb-4">
+  <div class="card-body">
+    <h2 class="fw-bolder mb-3 d-flex align-items-center">
+      <i class="bi bi-code-slash me-2 text-gradient"></i> Languages
+    </h2>
+
+    <div class="languages-grid">
+      <div class="language-item">HTML</div>
+      <div class="language-item">CSS</div>
+      <div class="language-item">JavaScript</div>
+      <div class="language-item">Python</div>
+      <div class="language-item">Java</div>
+      <div class="language-item">C Sharp</div>
+      <div class="language-item">SQL</div>
+      <div class="language-item">NoSQL</div>
+      <div class="language-item">Node.js</div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
